@@ -1,20 +1,8 @@
-# Showcase
+# React Testing Exercises
 
-A React component showcase built with Storybook, Tailwind CSS, Vitest, and Vite.
+This is a hands-on exercise repo for learning React frontend testing with Vitest, Testing Library, and Storybook interaction tests.
 
-## Getting started
-
-See [SETUP.md](./SETUP.md) for installation and setup instructions.
-
-## Project structure
-
-```
-src/
-├── components/    # React components
-├── hooks/         # Custom React hooks
-├── index.css      # Global styles
-└── test-setup.ts  # Test configuration
-```
+Follow the exercises in [EXERCISE.md](./EXERCISE.md) to get started.
 
 ## Tech stack
 
