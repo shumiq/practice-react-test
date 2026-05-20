@@ -18,17 +18,17 @@ There are **3 test files** with `it.todo` placeholders for you to implement.
 Test the `useCounter` hook in isolation with `renderHook` and `act`.
 
 **Already implemented (examples):**
-- `returns initial count of 0 by default` — basic render + assertion
-- `increases count by 1` — calling `increase()` inside `act()`
+- `should return initial count of 0 by default` — basic render + assertion
+- `should increase count by 1` — calling `increase()` inside `act()`
 
 **You implement:**
 | Test name | What to check |
 |---|---|
-| `accepts an initial value` | ??? |
+| `should accept an initial value` | ??? |
 | `???` | Pass `20`, expect count clamped to `10` |
-| `clamps initial value below 0` | ??? |
+| `should clamp initial value below 0` | ??? |
 | `???` | Start at `5`, call `decrease()`, expect `4` |
-| `does not increase above 10` | ??? |
+| `should not increase above 10` | ??? |
 | `???` | Start at `0`, call `decrease()`, count stays `0` |
 
 ### 2. Unit test — `src/components/CounterButton/CounterButton.unit.test.tsx`
@@ -44,24 +44,24 @@ Test the `CounterButton` component with the `useCounter` hook **mocked**. You mu
 **You implement:**
 | Test name | What to check |
 |---|---|
-| `renders count from mocked hook` | ??? |
+| `should render count from mocked hook` | ??? |
 | `???` | Click the count button, assert `mockIncrease` was called once |
-| `calls decrease when decrease button is clicked` | ??? |
+| `should call decrease when decrease button is clicked` | ??? |
 | `???` | `mockCount` is `0`, expect `-` button to be `toBeDisabled()` |
-| `decrease button is enabled when count is greater than 0` | ??? |
+| `should be enabled when count is greater than 0` | ??? |
 
 ### 3. Integration test — `src/components/CounterButton/CounterButton.integration.test.tsx`
 
 Test the `CounterButton` component with the **real** `useCounter` hook (no mocking). Click buttons and check actual state changes.
 
 **Already implemented (example):**
-- `increments count on click` — clicks count button, verifies text changed to "Count: 1"
+- `should increment count on click` — clicks count button, verifies text changed to "Count: 1"
 
 **You implement:**
 | Test name | What to check |
 |---|---|
 | `???` | Click `+` twice to reach `2`, then click `-`, expect "Count: 1" |
-| `does not go above 10` | ??? |
+| `should not go above 10` | ??? |
 
 ### 4. Storybook interaction test — `src/components/CounterButton/CounterButton.stories.tsx`
 
