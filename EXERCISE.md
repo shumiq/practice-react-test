@@ -30,6 +30,7 @@ Test the `useCounter` hook in isolation with `renderHook` and `act`.
 | `???` | Start at `5`, call `decrease()`, expect `4` |
 | `should not increase above 10` | ??? |
 | `???` | Start at `0`, call `decrease()`, count stays `0` |
+| `should toggle parity on each increase` | Start at `0` (even), increase to `1` (odd), increase to `2` (even) |
 
 ### 2. Unit test — `src/components/CounterButton/CounterButton.unit.test.tsx`
 
@@ -49,6 +50,8 @@ Test the `CounterButton` component with the `useCounter` hook **mocked**. You mu
 | `should call decrease when decrease button is clicked` | ??? |
 | `???` | `mockCount` is `0`, expect `-` button to be `toBeDisabled()` |
 | `should be enabled when count is greater than 0` | ??? |
+| `should apply even color class` | Set `mockCount` to `0` (even), expect count button to have red background classes |
+| `should apply odd color class` | Set `mockCount` to `1` (odd), expect count button to have indigo background classes |
 
 ### 3. Integration test — `src/components/CounterButton/CounterButton.integration.test.tsx`
 
@@ -62,6 +65,7 @@ Test the `CounterButton` component with the **real** `useCounter` hook (no mocki
 |---|---|
 | `???` | Click `+` twice to reach `2`, then click `-`, expect "Count: 1" |
 | `should not go above 10` | ??? |
+| `should toggle color between even and odd` | Click `+` once (count becomes 1, odd), expect indigo class; click `+` again (count becomes 2, even), expect red class |
 
 ### 4. Storybook interaction test — `src/components/CounterButton/CounterButton.stories.tsx`
 
@@ -76,7 +80,7 @@ Test the `CounterButton` via Storybook interaction tests (play functions). These
 |---|---|
 | `IncrementAndDecrement` | ??? |
 | `???` | Click `+` 10 times, expect "Count: 10" and button to be disabled |
-| `EvenOddColors` | ??? |
+| `EvenOddColors` | Verify the count button has red (even) color styling when count is 0 |
 | `???` | Expect the `-` button to be disabled |
 
 ## Tips
