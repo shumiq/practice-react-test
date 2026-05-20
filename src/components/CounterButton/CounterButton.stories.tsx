@@ -3,7 +3,7 @@ import { userEvent, within, expect } from "@storybook/test";
 import { CounterButton } from "./CounterButton";
 
 const meta: Meta<typeof CounterButton> = {
-  title: "Components/CounterButton",
+  title: "Components/CounterButton/Visual",
   component: CounterButton,
   parameters: {
     layout: "centered",
@@ -15,17 +15,21 @@ export default meta;
 
 type Story = StoryObj<typeof CounterButton>;
 
-export const Default: Story = {};
+export const DisableDecrease: Story = {};
 
-export const ClickToIncrement: Story = {
+export const DisableIncrease: Story = {};
+
+export const EnableAllEven: Story = {};
+
+export const EnableAllOdd: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const countButton = canvas.getByRole("button", { name: /^Count:/ });
-    await userEvent.click(countButton);
-    await expect(countButton).toHaveTextContent("Count: 1");
+    const increaseButton = canvas.getByRole("button", { name: /^Count:/ });
+    await userEvent.click(increaseButton);
+    const decreaseButton = canvas.getByRole("button", { name: "-" });
+    await expect(increaseButton).toBeEnabled();
+    await expect(decreaseButton).toBeEnabled();
+    await expect(increaseButton).toHaveTextContent("Count: 1");
+    await expect(increaseButton).toHaveClass("bg-indigo-600");
   },
 };
-
-export const IncrementAndDecrement: Story = {};
-
-export const EvenOddColors: Story = {};

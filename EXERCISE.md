@@ -9,7 +9,7 @@ pnpm test          # Run all tests
 pnpm test --watch  # Run in watch mode
 ```
 
-## Exercises
+## Vitest Tests
 
 There are **3 test files** with `it.todo` placeholders for you to implement.
 
@@ -67,12 +67,27 @@ Test the `CounterButton` component with the **real** `useCounter` hook (no mocki
 | `should not go above 10` | ??? |
 | `should toggle color between even and odd` | Click `+` once (count becomes 1, odd), expect indigo class; click `+` again (count becomes 2, even), expect red class |
 
-### 4. Storybook interaction test — `src/components/CounterButton/CounterButton.stories.tsx`
+## Storybook Interaction Tests
+
+### 1. Appearance story — `src/components/CounterButton/CounterButton.stories.tsx`
+
+Visual stories showing the `CounterButton` in different states. Each story should use a `play` function with `userEvent` to reach the desired state.
+
+**Already implemented (example):**
+- `EnableAllOdd` — clicks `+` once, asserts both buttons enabled, count is `1`, and button has indigo (odd) color class
+
+**You implement (add a `play` function to each story):**
+| Story name | What to do in the play function |
+|---|---|
+| `DisableDecrease` | Verify the `-` button is disabled, count is `0`, and button has red (even) color class |
+| `DisableIncrease` | Click `+` 10 times, verify `+` is disabled, count is `10`, `-` is enabled, and button has red (even) color class |
+| `EnableAllEven` | Click `+` twice, verify both buttons enabled, count is `2`, and button has red (even) color class |
+
+### 2. Interaction tests — `src/components/CounterButton/CounterButton.interaction.stories.tsx`
 
 Test the `CounterButton` via Storybook interaction tests (play functions). These run inside the Storybook browser environment.
 
-**Already implemented (examples):**
-- `Default` — basic story with no interaction, renders the component
+**Already implemented (example):**
 - `ClickToIncrement` — clicks the count button and verifies text changed to "Count: 1"
 
 **You implement (add a `play` function to each story):**

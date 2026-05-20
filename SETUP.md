@@ -27,7 +27,6 @@ pnpm install
 
 | Command                  | Description                     |
 | ------------------------ | ------------------------------- |
-| `pnpm dev`               | Start dev server                |
 | `pnpm storybook`         | Start Storybook                 |
 | `pnpm test`              | Run tests with Vitest           |
 | `pnpm lint`              | Lint code with ESLint           |
