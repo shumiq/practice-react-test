@@ -12,7 +12,5 @@ describe('CounterButton (integration)', () => {
     expect(countButton).toHaveTextContent('Count: 1');
   });
 
-  it.todo('decrements count on decrease click');
-
   it.todo('does not go above 10');
 });

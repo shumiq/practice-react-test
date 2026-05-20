@@ -16,13 +16,7 @@ describe('useCounter', () => {
 
   it.todo('accepts an initial value');
 
-  it.todo('clamps initial value above 10');
-
   it.todo('clamps initial value below 0');
 
-  it.todo('decreases count by 1');
-
   it.todo('does not increase above 10');
-
-  it.todo('does not decrease below 0');
 });

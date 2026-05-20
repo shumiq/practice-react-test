@@ -28,8 +28,4 @@ export const ClickToIncrement: Story = {
 
 export const IncrementAndDecrement: Story = {};
 
-export const MaxedOut: Story = {};
-
 export const EvenOddColors: Story = {};
-
-export const DecreaseDisabledAtZero: Story = {};
