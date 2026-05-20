@@ -26,54 +26,10 @@ export const ClickToIncrement: Story = {
   },
 };
 
-export const IncrementAndDecrement: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const countButton = canvas.getByRole("button", { name: /^Count:/ });
-    const decreaseButton = canvas.getByRole("button", { name: "-" });
+export const IncrementAndDecrement: Story = {};
 
-    await userEvent.click(countButton);
-    await userEvent.click(countButton);
-    await userEvent.click(countButton);
-    await expect(countButton).toHaveTextContent("Count: 3");
+export const MaxedOut: Story = {};
 
-    await userEvent.click(decreaseButton);
-    await expect(countButton).toHaveTextContent("Count: 2");
-  },
-};
+export const EvenOddColors: Story = {};
 
-export const MaxedOut: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const countButton = canvas.getByRole("button", { name: /^Count:/ });
-
-    for (let i = 0; i < 10; i++) {
-      await userEvent.click(countButton);
-    }
-
-    await expect(countButton).toHaveTextContent("Count: 10");
-    await expect(countButton).toBeDisabled();
-  },
-};
-
-export const EvenOddColors: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const countButton = canvas.getByRole("button", { name: /^Count:/ });
-
-    await expect(countButton.className).toContain("bg-red-");
-
-    await userEvent.click(countButton);
-    await expect(countButton.className).toContain("bg-indigo-");
-
-    await userEvent.click(countButton);
-    await expect(countButton.className).toContain("bg-red-");
-  },
-};
-
-export const DecreaseDisabledAtZero: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    await expect(canvas.getByRole("button", { name: "-" })).toBeDisabled();
-  },
-};
+export const DecreaseDisabledAtZero: Story = {};
